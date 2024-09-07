@@ -1,0 +1,44 @@
+2024-09-07 18:23:51.954 | ERROR    | app.core.logger:log_exception:88 - Обработана ошибка: name 'logger' is not defined
+2024-09-07 18:23:53.239 | ERROR    | app.core.logger:log_exception:88 - Обработана ошибка: name 'logger' is not defined
+2024-09-07 18:24:43.934 | ERROR    | app.core.logger:log_exception:88 - Обработана ошибка: name 'logger' is not defined
+2024-09-07 18:24:44.149 | ERROR    | app.core.logger:log_exception:88 - Обработана ошибка: name 'logger' is not defined
+2024-09-07 18:26:17.349 | INFO     | app.main:log_requests:44 - GET http://127.0.0.1:8000/docs - 200
+2024-09-07 18:26:18.129 | INFO     | app.main:log_requests:44 - GET http://127.0.0.1:8000/openapi.json - 200
+2024-09-07 18:27:07.737 | ERROR    | app.core.logger:log_exception:88 - Обработана ошибка: name 'telegram_service' is not defined
+2024-09-07 18:28:19.309 | ERROR    | app.core.logger:log_exception:88 - Обработана ошибка: 'NoneType' object has no attribute 'token'
+2024-09-07 18:32:22.487 | ERROR    | app.core.logger:log_exception:88 - Обработана ошибка: Client.get() got an unexpected keyword argument 'json'
+2024-09-07 18:33:12.348 | ERROR    | app.core.logger:log_exception:88 - Обработана ошибка: 2 validation errors for UserSchema
+created_at
+  Field required [type=missing, input_value={'id': UUID('a30df21f-d61...il': 'user@example.com'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.8/v/missing
+updated_at
+  Field required [type=missing, input_value={'id': UUID('a30df21f-d61...il': 'user@example.com'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.8/v/missing
+2024-09-07 18:35:13.447 | INFO     | app.main:log_requests:44 - POST http://127.0.0.1:8000/api/v1/users/ - 400
+2024-09-07 18:37:54.928 | ERROR    | app.core.logger:log_exception:88 - Обработана ошибка: 2 validation errors for UserSchema
+created_at
+  Input should be a valid string [type=string_type, input_value=datetime.datetime(2024, 9, 7, 15, 37, 54), input_type=datetime]
+    For further information visit https://errors.pydantic.dev/2.8/v/string_type
+updated_at
+  Input should be a valid string [type=string_type, input_value=datetime.datetime(2024, 9, 7, 15, 37, 54), input_type=datetime]
+    For further information visit https://errors.pydantic.dev/2.8/v/string_type
+2024-09-07 18:39:33.168 | INFO     | app.main:log_requests:44 - POST http://127.0.0.1:8000/api/v1/users/ - 201
+2024-09-07 18:40:03.973 | INFO     | app.main:log_requests:44 - POST http://127.0.0.1:8000/api/v1/users/ - 400
+2024-09-07 18:42:27.812 | INFO     | app.main:log_requests:44 - POST http://127.0.0.1:8000/api/v1/users/ - 400
+2024-09-07 18:42:40.029 | INFO     | app.main:log_requests:44 - POST http://127.0.0.1:8000/api/v1/auth/login - 200
+2024-09-07 18:42:52.453 | INFO     | app.main:log_requests:44 - GET http://127.0.0.1:8000/api/v1/users/me - 403
+2024-09-07 18:43:00.596 | ERROR    | app.core.logger:log_exception:88 - Обработана ошибка: 'Provide' object has no attribute 'decode'
+2024-09-07 18:47:38.845 | ERROR    | app.core.logger:log_exception:88 - Обработана ошибка: 2 validation errors for UserSchema
+created_at
+  Field required [type=missing, input_value={'id': UUID('e50126b9-80a...il': 'user@example.com'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.8/v/missing
+updated_at
+  Field required [type=missing, input_value={'id': UUID('e50126b9-80a...il': 'user@example.com'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.8/v/missing
+2024-09-07 18:49:01.412 | ERROR    | app.core.logger:log_exception:88 - Обработана ошибка: 2 validation errors for UserSchema
+created_at
+  Input should be a valid string [type=string_type, input_value=datetime.datetime(2024, 9, 7, 15, 39, 32), input_type=datetime]
+    For further information visit https://errors.pydantic.dev/2.8/v/string_type
+updated_at
+  Input should be a valid string [type=string_type, input_value=datetime.datetime(2024, 9, 7, 15, 39, 32), input_type=datetime]
+    For further information visit https://errors.pydantic.dev/2.8/v/string_type
