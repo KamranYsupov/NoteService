@@ -37,7 +37,7 @@ class JWTService:
         payload = {'sub': str(user.id), 'iat': now}
         if token_type == TokenEnum.ACCESS:
             timedelta = datetime.timedelta(minutes=self.access_expire_minutes)
-            payload.update(username=user.username, email=user.email)
+            payload.update(username=user.username)
 
         elif token_type == TokenEnum.REFRESH:
             timedelta = datetime.timedelta(days=self.refresh_expire_days)

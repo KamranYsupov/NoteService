@@ -17,6 +17,9 @@ class Settings(BaseSettings):
 
     project_name: str = Field(title='Название проекта')
     api_v1_prefix: str = Field(title='Префикс первой версии API', default='/api/v1')
+    http_protocol: str = Field(default='http')
+    port: str | int = Field(default='8000')
+    domain_host_name: str = Field(default='127.0.0.1')
     log_level: LogLevel = Field(title='Уровень логирования', default=LogLevel.INFO)  
     
     # region Настройки бота
@@ -60,15 +63,25 @@ class Settings(BaseSettings):
     container_wiring_modules: list = Field(
         title='Модули контейнера',
         default=[
+            'app.api.v1.deps',
             'app.api.v1.endpoints.user',
             'app.api.v1.endpoints.auth',
-            'app.api.v1.deps',
+            'app.api.v1.endpoints.note',
+            
         ]
     )
 
     @property
     def db_url(self) -> str:
         return self.sqlite_default_url
+    
+    @property
+    def web_url(self) -> str:
+        return f'{self.http_protocol}://{self.domain_host_name}:{self.port}'
+    
+    @property
+    def api_v1_url(self) -> str:
+        return f'{self.web_url}{self.api_v1_url}'
 
     class Config:
         env_file = '.env'

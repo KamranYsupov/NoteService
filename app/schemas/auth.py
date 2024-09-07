@@ -2,7 +2,7 @@ from pydantic import BaseModel, Field
 
 
 class AuthUserSchema(BaseModel):
-    username: str = Field(title='Имя пользователя', max_length=50, min_length=8)
+    username: str = Field(title='Имя пользователя', max_length=50)
     password: str = Field(title='Пароль', min_length=8)
 
 

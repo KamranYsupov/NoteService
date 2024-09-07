@@ -1,3 +1,4 @@
+import uuid
 from typing import List, Tuple
 
 from app.db import Note
@@ -21,18 +22,28 @@ class NoteService(CRUDServiceMixin):
             unique_fields=unique_fields,
         )
         
-    async def create_note(create_note_tags_schema: CreateNoteSchema):
-        obj_in_data = create_note_tags_schema.model_dump()
-        tags_names = obj_in_data['tags_names']
-        tags = self._repository_tag.bulk_create(
+    async def create_note(self, obj_in):
+        obj_in_data = dict(obj_in)
+        tags_names = obj_in_data.pop('tags_names')
+        print(tags_names)
+        tags = await self._repository_tag.bulk_create(
             tags_names=tags_names,
             returning=True,
         )
         obj_in_data['tags'] = tags
         
-        return self._repository_note.create(obj_in_data)
-        
+        return await self._repository_note.create(obj_in_data)
+    
+    async def get_user_notes(
+        self, 
+        owner_id: uuid.UUID,
+        limit: int, 
+        skip: int,
+    ) -> List[Note]:
+        return await self._repository_note.get_user_notes(
+            owner_id=owner_id,
+            limit=limit,
+            skip=skip
+        )
         
             
-            
-                   

@@ -30,7 +30,6 @@ async def register_user(
         id=user.id,
         telegram_id=user.telegram_id,
         username=user.username,
-        email=user.email,
         created_at=user.created_at,
         updated_at=user.updated_at
     )
@@ -45,7 +44,6 @@ async def get_user_info(
     user_schema = UserSchema(
         id=user.id,
         username=user.username,
-        email=user.email,
         created_at=user.created_at,
         updated_at=user.updated_at
     )

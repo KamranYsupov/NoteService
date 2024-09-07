@@ -63,7 +63,7 @@ class Container(containers.DeclarativeContainer):
         UserService, 
         repository_user=repository_user, 
         telegram_service=telegram_service,
-        unique_fields=('telegram_id', 'username', 'email')
+        unique_fields=('telegram_id', 'username')
     )
     # endregion
 

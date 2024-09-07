@@ -14,4 +14,5 @@ class NoteSchema(NoteSchemaMixin):
     
     
 class CreateNoteSchema(NoteSchemaMixin):
+    owner_id: uuid.UUID
     tags_names: List[str] = []

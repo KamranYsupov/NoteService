@@ -33,6 +33,7 @@ class RepositoryBase(Generic[ModelType,]):
         db_obj = self.model(**insert_data)
 
         self._session.add(db_obj)
+        await self._session.flush()
         await self._session.commit()
         await self._session.refresh(db_obj)
 

@@ -45,10 +45,6 @@ class Base(DeclarativeBase):
             serialized_data.pop(field)
 
         return serialized_data
-        
-       
-        
-        
 
 
 class AbstractUser(Base):
@@ -57,7 +53,6 @@ class AbstractUser(Base):
     __abstract__ = True
 
     username: Mapped[str] = mapped_column(unique=True, index=True)
-    email: Mapped[str] = mapped_column(unique=True, index=True)
     password: Mapped[bytes]
 
 

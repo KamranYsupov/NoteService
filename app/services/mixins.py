@@ -44,8 +44,8 @@ class CRUDServiceMixin:
     async def list(self, *args, limit: int, **kwargs) -> list[ModelType]:
         return await self._repository.list(*args, limit=limit, **kwargs)
 
-    async def delete(self, obj_id: UUID) -> None:
-        return await self._repository.delete(obj_id=obj_id)
+    async def delete(self, **kwargs) -> None:
+        return await self._repository.delete(**kwargs)
 
     async def exists(self, *args, **kwargs) -> Optional[ModelType]:
         return await self._repository.exists(*args, **kwargs)
