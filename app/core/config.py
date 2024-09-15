@@ -84,12 +84,12 @@ class Settings(BaseSettings):
         if self.db_url:
             return self.db_url
         return str(PostgresDsn.build(
-            scheme="postgresql",
-            username=self.postgres_user,
-            password=self.postgres_password,
-            host=self.postgres_host,
-            port=self.postgres_port,
-            path=f"{self.postgres_db}",
+            scheme="postgresql+asyncpg",
+            username=self.db_user,
+            password=self.db_password,
+            host=self.db_host,
+            port=self.db_port,
+            path=f"{self.db_name}",
         ))
     
     @property

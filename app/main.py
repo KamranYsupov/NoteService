@@ -1,4 +1,4 @@
-from contextlib import asynccontextmanager
+﻿from contextlib import asynccontextmanager
 
 import uvicorn
 from fastapi import FastAPI, Request
@@ -36,7 +36,6 @@ def create_app() -> FastAPI:
 
 
 app = create_app()
-
 
 @app.middleware('http')
 async def log_requests(request: Request, call_next):
