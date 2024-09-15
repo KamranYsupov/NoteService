@@ -46,4 +46,14 @@ class NoteService(CRUDServiceMixin):
             skip=skip
         )
         
+    async def get_user_notes_by_tag_name(
+        self,
+        owner_id: uuid.UUID, 
+        tag_name: str,
+    ):
+        return await self._repository_note.get_user_notes_by_tag_name(
+            owner_id=owner_id,
+            tag_name=tag_name
+        )
+        
             

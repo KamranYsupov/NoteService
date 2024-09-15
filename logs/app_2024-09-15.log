@@ -1,0 +1,73 @@
+2024-09-15 21:29:35.663 | ERROR    | app.core.logger:log_exception:88 - Обработана ошибка: This Session's transaction has been rolled back due to a previous exception during flush. To begin a new transaction with this Session, first issue Session.rollback(). Original exception was: (sqlite3.IntegrityError) UNIQUE constraint failed: users.username
+[SQL: INSERT INTO users (telegram_id, username, password, id, created_at, updated_at) VALUES (?, ?, ?, ?, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP) RETURNING created_at, updated_at]
+[parameters: (6145206276, 'kkamrannnnn', <memory at 0x000000CC11731480>, '3deb1999c97d4825856a3ae8015cd19c')]
+(Background on this error at: https://sqlalche.me/e/20/gkpj) (Background on this error at: https://sqlalche.me/e/20/7s2a)
+2024-09-15 22:11:18.103 | INFO     | app.main:log_requests:44 - POST http://127.0.0.1:8000/api/v1/users/ - 201
+2024-09-15 22:11:42.407 | INFO     | app.main:log_requests:44 - POST http://127.0.0.1:8000/api/v1/auth/login - 422
+2024-09-15 22:12:14.104 | INFO     | app.main:log_requests:44 - POST http://127.0.0.1:8000/api/v1/auth/login - 401
+2024-09-15 22:13:50.216 | ERROR    | app.core.logger:log_exception:88 - Обработана ошибка: name 'asyncio' is not defined
+2024-09-15 22:14:20.844 | INFO     | app.main:log_requests:44 - POST http://127.0.0.1:8000/api/v1/auth/login - 200
+2024-09-15 22:14:34.688 | INFO     | app.main:log_requests:44 - GET http://127.0.0.1:8000/api/v1/users/me - 401
+2024-09-15 22:14:58.999 | INFO     | app.main:log_requests:44 - GET http://127.0.0.1:8000/api/v1/users/me - 200
+2024-09-15 21:38:48.228 | INFO     | app.main:log_requests:44 - POST http://127.0.0.1:8000/api/v1/users/ - 201
+2024-09-15 21:42:15.421 | INFO     | app.main:log_requests:44 - POST http://127.0.0.1:8000/api/v1/users/ - 400
+2024-09-15 21:44:40.495 | INFO     | app.main:log_requests:44 - POST http://127.0.0.1:8000/api/v1/users/ - 400
+2024-09-15 21:46:17.699 | INFO     | app.main:log_requests:44 - POST http://127.0.0.1:8000/api/v1/users/ - 400
+2024-09-15 21:49:41.314 | INFO     | app.main:log_requests:44 - POST http://127.0.0.1:8000/api/v1/users/ - 400
+2024-09-15 21:57:30.402 | ERROR    | app.core.logger:log_exception:88 - Обработана ошибка: timed out
+2024-09-15 22:00:41.674 | INFO     | app.main:log_requests:44 - POST http://127.0.0.1:8000/api/v1/users/ - 400
+2024-09-15 22:06:50.649 | INFO     | app.main:log_requests:44 - GET http://127.0.0.1:8000/docs - 200
+2024-09-15 22:06:56.299 | INFO     | app.main:log_requests:44 - GET http://127.0.0.1:8000/openapi.json - 200
+2024-09-15 22:07:13.968 | INFO     | app.main:log_requests:44 - POST http://127.0.0.1:8000/api/v1/auth/login - 401
+2024-09-15 22:07:23.070 | INFO     | app.main:log_requests:44 - POST http://127.0.0.1:8000/api/v1/auth/login - 200
+2024-09-15 22:08:02.154 | INFO     | app.main:log_requests:44 - POST http://127.0.0.1:8000/api/v1/notes/?limit_tags=20 - 201
+2024-09-15 22:08:09.495 | INFO     | app.main:log_requests:44 - POST http://127.0.0.1:8000/api/v1/notes/?limit_tags=20 - 201
+2024-09-15 22:08:15.041 | INFO     | app.main:log_requests:44 - POST http://127.0.0.1:8000/api/v1/notes/?limit_tags=20 - 201
+2024-09-15 22:08:25.929 | ERROR    | app.core.logger:log_exception:88 - Обработана ошибка: name 'Tag' is not defined
+2024-09-15 22:09:09.736 | ERROR    | app.core.logger:log_exception:88 - Обработана ошибка: name 'tags_table' is not defined
+2024-09-15 22:10:30.903 | ERROR    | app.core.logger:log_exception:88 - Обработана ошибка: type object 'NoteTag' has no attribute 'c'
+2024-09-15 22:11:42.357 | ERROR    | app.core.logger:log_exception:88 - Обработана ошибка: 'Subquery' object has no attribute 'id'
+2024-09-15 22:12:25.312 | ERROR    | app.core.logger:log_exception:88 - Обработана ошибка: 'RepositoryNote' object has no attribute 'session'
+2024-09-15 22:13:04.541 | INFO     | app.main:log_requests:44 - GET http://127.0.0.1:8000/api/v1/notes/by_tag_name?tag_name=%23ex - 200
+2024-09-15 22:15:20.048 | INFO     | app.main:log_requests:44 - POST http://127.0.0.1:8000/api/v1/users/ - 400
+2024-09-15 21:29:47.512 | INFO     | app.main:log_requests:44 - POST http://127.0.0.1:8000/api/v1/auth/login - 200
+2024-09-15 21:33:16.476 | INFO     | app.main:log_requests:44 - POST http://127.0.0.1:8000/api/v1/auth/login - 200
+2024-09-15 21:33:16.502 | INFO     | app.main:log_requests:44 - POST http://127.0.0.1:8000/api/v1/notes - 307
+2024-09-15 21:33:16.774 | INFO     | app.main:log_requests:44 - POST http://127.0.0.1:8000/api/v1/notes/ - 201
+2024-09-15 21:50:54.134 | INFO     | app.main:log_requests:44 - POST http://127.0.0.1:8000/api/v1/auth/login - 200
+2024-09-15 21:50:54.149 | INFO     | app.main:log_requests:44 - POST http://127.0.0.1:8000/api/v1/notes - 307
+2024-09-15 21:50:54.377 | INFO     | app.main:log_requests:44 - POST http://127.0.0.1:8000/api/v1/notes/ - 201
+2024-09-15 21:52:02.743 | INFO     | app.main:log_requests:44 - POST http://127.0.0.1:8000/api/v1/users/ - 400
+2024-09-15 21:52:11.259 | INFO     | app.main:log_requests:44 - POST http://127.0.0.1:8000/api/v1/users/ - 400
+2024-09-15 21:52:53.651 | INFO     | app.main:log_requests:44 - POST http://127.0.0.1:8000/api/v1/auth/login - 200
+2024-09-15 21:52:53.666 | INFO     | app.main:log_requests:44 - POST http://127.0.0.1:8000/api/v1/notes - 307
+2024-09-15 21:52:53.871 | INFO     | app.main:log_requests:44 - POST http://127.0.0.1:8000/api/v1/notes/ - 201
+2024-09-15 21:54:45.371 | INFO     | app.main:log_requests:44 - POST http://127.0.0.1:8000/api/v1/users/ - 400
+2024-09-15 21:55:02.427 | INFO     | app.main:log_requests:44 - POST http://127.0.0.1:8000/api/v1/users/ - 400
+2024-09-15 21:55:15.211 | INFO     | app.main:log_requests:44 - POST http://127.0.0.1:8000/api/v1/auth/login - 200
+2024-09-15 21:55:15.258 | INFO     | app.main:log_requests:44 - GET http://127.0.0.1:8000/api/v1/notes/by_tag_name?tag_name=%23ex - 200
+2024-09-15 22:01:00.789 | INFO     | app.main:log_requests:44 - POST http://127.0.0.1:8000/api/v1/users/ - 400
+2024-09-15 22:01:15.450 | INFO     | app.main:log_requests:44 - POST http://127.0.0.1:8000/api/v1/auth/login - 200
+2024-09-15 22:01:15.497 | INFO     | app.main:log_requests:44 - GET http://127.0.0.1:8000/api/v1/notes/by_tag_name?tag_name=%23ex - 200
+2024-09-15 22:02:29.299 | INFO     | app.main:log_requests:44 - POST http://127.0.0.1:8000/api/v1/users/ - 400
+2024-09-15 22:02:36.439 | INFO     | app.main:log_requests:44 - POST http://127.0.0.1:8000/api/v1/users/ - 400
+2024-09-15 22:02:46.733 | INFO     | app.main:log_requests:44 - POST http://127.0.0.1:8000/api/v1/auth/login - 200
+2024-09-15 22:02:46.765 | INFO     | app.main:log_requests:44 - GET http://127.0.0.1:8000/api/v1/notes/by_tag_name?tag_name=%23ex - 200
+2024-09-15 22:03:01.624 | INFO     | app.main:log_requests:44 - POST http://127.0.0.1:8000/api/v1/auth/login - 200
+2024-09-15 22:03:01.640 | ERROR    | app.core.logger:log_exception:88 - Обработана ошибка: name 'tag_name' is not defined
+2024-09-15 22:03:38.327 | INFO     | app.main:log_requests:44 - GET http://127.0.0.1:8000/api/v1/notes/by_tag_name?tag_name=%23ex - 401
+2024-09-15 22:03:51.207 | INFO     | app.main:log_requests:44 - POST http://127.0.0.1:8000/api/v1/auth/login - 200
+2024-09-15 22:04:11.068 | INFO     | app.main:log_requests:44 - POST http://127.0.0.1:8000/api/v1/auth/login - 200
+2024-09-15 22:04:11.099 | INFO     | app.main:log_requests:44 - GET http://127.0.0.1:8000/api/v1/notes/by_tag_name?tag_name=%23ex - 200
+2024-09-15 22:04:19.057 | INFO     | app.main:log_requests:44 - POST http://127.0.0.1:8000/api/v1/auth/login - 200
+2024-09-15 22:04:19.073 | ERROR    | app.core.logger:log_exception:88 - Обработана ошибка: name 'tag_name' is not defined
+2024-09-15 22:05:39.664 | INFO     | app.main:log_requests:44 - POST http://127.0.0.1:8000/api/v1/users/ - 400
+2024-09-15 22:05:43.218 | INFO     | app.main:log_requests:44 - POST http://127.0.0.1:8000/api/v1/auth/login - 200
+2024-09-15 22:05:43.233 | ERROR    | app.core.logger:log_exception:88 - Обработана ошибка: name 'tag_name' is not defined
+2024-09-15 22:06:29.603 | INFO     | app.main:log_requests:44 - POST http://127.0.0.1:8000/api/v1/auth/login - 200
+2024-09-15 22:06:43.255 | ERROR    | app.core.logger:log_exception:88 - Обработана ошибка: name 'tag_name' is not defined
+2024-09-15 22:08:56.421 | ERROR    | app.core.logger:log_exception:88 - Обработана ошибка: name 'tag_name' is not defined
+2024-09-15 22:09:58.924 | INFO     | app.main:log_requests:44 - GET http://127.0.0.1:8000/api/v1/notes/?limit=10&skip=0 - 200
+2024-09-15 22:10:17.898 | INFO     | app.main:log_requests:44 - POST http://127.0.0.1:8000/api/v1/users/ - 400
+2024-09-15 22:10:21.689 | INFO     | app.main:log_requests:44 - POST http://127.0.0.1:8000/api/v1/auth/login - 200
+2024-09-15 22:10:21.720 | INFO     | app.main:log_requests:44 - GET http://127.0.0.1:8000/api/v1/notes/ - 200

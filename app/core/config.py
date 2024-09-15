@@ -1,6 +1,6 @@
 ﻿from enum import Enum
 
-from pydantic import Field
+from pydantic import Field, PostgresDsn
 from pydantic_settings import BaseSettings
 
 
@@ -21,6 +21,9 @@ class Settings(BaseSettings):
     port: str | int = Field(default='8000')
     domain_host_name: str = Field(default='127.0.0.1')
     log_level: LogLevel = Field(title='Уровень логирования', default=LogLevel.INFO)  
+    telegram_client_password: str = Field(
+        title='Пароль для авторизации клиентов из телеграмма'
+    )  
     
     # region Настройки бота
     bot_token: str = Field(title='Токен бота')
@@ -67,6 +70,7 @@ class Settings(BaseSettings):
             'app.api.v1.endpoints.user',
             'app.api.v1.endpoints.auth',
             'app.api.v1.endpoints.note',
+            'app.bot.handlers.note',
             
         ]
     )
@@ -76,12 +80,25 @@ class Settings(BaseSettings):
         return self.sqlite_default_url
     
     @property
+    def postgres_url(self) -> str:
+        if self.db_url:
+            return self.db_url
+        return str(PostgresDsn.build(
+            scheme="postgresql",
+            username=self.postgres_user,
+            password=self.postgres_password,
+            host=self.postgres_host,
+            port=self.postgres_port,
+            path=f"{self.postgres_db}",
+        ))
+    
+    @property
     def web_url(self) -> str:
         return f'{self.http_protocol}://{self.domain_host_name}:{self.port}'
     
     @property
     def api_v1_url(self) -> str:
-        return f'{self.web_url}{self.api_v1_url}'
+        return f'{self.web_url}{self.api_v1_prefix}'
 
     class Config:
         env_file = '.env'

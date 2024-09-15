@@ -11,6 +11,8 @@ x-function: &python
     POETRY_HOME: /opt/poetry
   networks:
     - internal
+  depends_on:
+    - app_db
   env_file:
     .env
 

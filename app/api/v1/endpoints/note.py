@@ -74,6 +74,32 @@ async def get_user_notes(
     return notes_schemas
 
 
+@router.get('/by_tag_name', status_code=status.HTTP_200_OK, response_model=List[NoteSchema])
+@inject
+async def get_user_notes_by_tag_name(
+    tag_name: str,
+    user: User = Depends(get_current_user_access),
+    note_service: NoteService = Depends(
+        Provide[Container.note_service]
+    ),
+) -> List[NoteSchema]:
+    notes = await note_service.get_user_notes_by_tag_name(
+        owner_id=user.id,
+        tag_name=tag_name
+    )
+    notes_schemas = [
+        NoteSchema(
+            id=note.id,
+            title=note.title,
+            content=note.content,
+            tags=[tag.name for tag in note.tags],
+            created_at=note.created_at,
+            updated_at=note.updated_at,
+        ) for note in notes
+    ]
+    return notes_schemas
+
+
 @router.delete('/{note_id}', status_code=status.HTTP_200_OK)
 @inject
 async def delete_note(
